@@ -16,7 +16,7 @@
     <hr>
     <h2>Save Restaurant</h2>
 
-    <form action="#" th:action="@{saveOffer}" th:object="${offer}"  method="post">
+    <form action="#" th:action="@{saveOffer/{id}( id = ${restaurant.id})}" th:object="${offer}"  method="post">
         <input type="text" th:field="*{name}" placeholder="Offer Name" class="form-control mb-4 col-4">
         <uL>
             <li th:each="product : ${products}">

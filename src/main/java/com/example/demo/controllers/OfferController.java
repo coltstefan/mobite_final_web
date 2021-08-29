@@ -44,16 +44,19 @@ public class OfferController {
     private String newOffer(@PathVariable(value = "id")Long id ,Model model){
 
         Offer offer  = new Offer();
+        model.addAttribute("restaurant" , restaurantService.findRestaurantById(id));
         model.addAttribute("offer",offer);
         model.addAttribute("products" , restaurantService.findRestaurantById(id).getProducts());
         return "new_offer";
 
     }
 
-    @PostMapping("/saveOffer")
-    public String saveOffer(@ModelAttribute("offer") Offer offer){
+    @PostMapping("/newOffer/saveOffer/{id}")
+    public String saveOffer(@PathVariable Long id , @ModelAttribute("offer") Offer offer){
+//        System.out.println(offer.getProducts());
+//        offer.setRestaurant(restaurantService.findRestaurantById(id));
         offerService.save(offer);
-        return "redirect:/restaurants";
+        return "redirect:/restaurants/{id}";
     }
 
 }

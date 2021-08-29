@@ -24,11 +24,11 @@ public class Offer {
     private String name;
 
 
-    @OneToOne(cascade = CascadeType.DETACH)
+    @OneToOne(cascade = CascadeType.ALL)
     private Restaurant restaurant;
 
 
-    @OneToMany(mappedBy = "offer" , cascade = CascadeType.DETACH)
+    @OneToMany(mappedBy = "offer" , cascade = CascadeType.ALL)
     private Set<Product> products = new HashSet<>();
 
     public Offer(String name){

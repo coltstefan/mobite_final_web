@@ -62,9 +62,10 @@ public class DataLoader implements CommandLineRunner {
         Offer offer1 = new Offer("Pizza Hut");
         Offer offer2 = new Offer("Dominos");
         Offer offer3 = new Offer("KFC");
+        Offer offer4 = new Offer("McDonalds Breakfast");
 
         offer1.addProduct(p1);
-       // offer1.addProduct(p2);
+        offer1.addProduct(p2);
 
         offer2.addProduct(p3);
         offer2.addProduct(p4);
@@ -115,7 +116,8 @@ public class DataLoader implements CommandLineRunner {
         offer2.setRestaurant(r2);
         r4.setOffer(offer3);
         offer3.setRestaurant(r4);
-
+        r3.setOffer(offer4);
+        offer4.setRestaurant(r3);
 
 
 
@@ -156,13 +158,13 @@ public class DataLoader implements CommandLineRunner {
 
         //System.out.println(restaurantService.findAll());
 
-        System.out.println(orderService.findOrderById(16L).get(0).getProducts());
-        System.out.println(orderService.findOrderById(17L).get(0).getProducts());
-        System.out.println(orderService.findOrderById(18L).get(0).getProducts());
-
-        System.out.println(offerService.findOfferById(2L).getProducts());
-        System.out.println(offerService.findAll());
-        System.out.println(offerService.findOfferByRestaurant(1L));
+//        System.out.println(orderService.findOrderById(17L).get(0).getProducts());
+//        System.out.println(orderService.findOrderById(18L).get(0).getProducts());
+//        System.out.println(orderService.findOrderById(19L).get(0).getProducts());
+//
+//        System.out.println(offerService.findOfferById(2L).getProducts());
+//        System.out.println(offerService.findAll());
+//        System.out.println(offerService.findOfferByRestaurant(1L));
 
 
 

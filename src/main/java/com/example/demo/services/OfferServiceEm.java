@@ -24,7 +24,7 @@ public class OfferServiceEm implements OfferService {
     @Override
     @Transactional
     public Offer save(Offer o) {
-        em.persist(o);
+        em.merge(o);
         return o;
     }
 
